@@ -1,4 +1,7 @@
 import os
+import sys
+sys.path.append(os.path.join(os.path.dirname(__file__), 'rossmann'))
+print(sys.path)
 import pickle
 import pandas as pd
 from flask             import Flask, request, Response
@@ -42,4 +45,4 @@ def rossman_predict():
     
 if __name__ == '__main__':
     port = os.environ.get('PORT', 5000)
-    app.run( host = "127.0.0.1", port= port)
+    app.run( host = "0.0.0.0", port= port)
